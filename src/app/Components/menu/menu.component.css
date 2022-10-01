@@ -1,0 +1,8 @@
+.centrado{
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.navbar{
+background:  radial-gradient(at top left, #F94F74 30%, #A94EEC);
+}

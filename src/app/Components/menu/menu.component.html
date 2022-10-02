@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg ">
+
+<nav class="navbar navbar-expand-lg fw-bold ">
   <div class="container-fluid ">
 
     <a class="navbar-brand" href="https://bitoo.com.mx/inicio">
@@ -7,13 +8,13 @@
     <div class="collapse navbar-collapse  " id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0  centrado  ">
         <li class="nav-item">
-          <a class="nav-link active text-white" aria-current="page" >Tombola</a>
+          <a class="nav-link active text-white d-inline-flex" aria-current="page" [routerLink]="'/Tombola'"><p class="fa fa-renren">Sorteo</p></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white">Intercambio</a>
+          <a class="nav-link text-white d-inline-flex" ><p class="fa fa-cubes">Intercambio</p></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" [routerLink]="'/Home'">Home</a>
+          <a class="nav-link text-white d-inline-flex" [routerLink]="'/Home'"><p class="fa fa-home">Home</p></a>
         </li>
       </ul>
     </div>

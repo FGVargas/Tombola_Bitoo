@@ -1,8 +1,9 @@
 .centrado{
   position: absolute;
-  left: 50%;
+  left: 80%;
   transform: translatex(-50%);
+  font-size:1.3em;
 }
 .navbar{
-background:  radial-gradient(at top left, #F94F74 30%, #A94EEC);
+  background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593);
 }

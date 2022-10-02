@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ServiceService} from "../../Services/service.service";
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-tombola',
   templateUrl: './tombola.component.html',
+  encapsulation:ViewEncapsulation.None,
   styleUrls: ['./tombola.component.css']
 })
 export class TombolaComponent implements OnInit {
   id:any;
   listaTodos:Array<any>=[];
   temporizador:number=0;
-  constructor(private route:ActivatedRoute,private servicio:ServiceService) {
+  constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal) {
   }
 
   ngOnInit(): void {
@@ -57,6 +59,9 @@ export class TombolaComponent implements OnInit {
     SPAN_MINUTES.textContent =  minutos;
     // @ts-ignore
     SPAN_SECONDS.textContent = segundos;
+  }
+  openSM(contenido: any){
+    this.tombola.open(contenido,{size:'sm'});
   }
 
 }

@@ -7,19 +7,23 @@ import { MenuComponent } from './Components/menu/menu.component';
 import {RouterOutlet} from "@angular/router";
 import { TombolaComponent } from './Components/tombola/tombola.component';
 import {HttpClientModule} from "@angular/common/http";
+import { RegistroComponent } from './Components/registro/registro.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    TombolaComponent
+    TombolaComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     RouterOutlet,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

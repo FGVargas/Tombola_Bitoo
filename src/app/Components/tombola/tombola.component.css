@@ -31,6 +31,21 @@ section{
   
 }
 
+.modal-content {
+  width: 400px !important;
+  background: #24303c !important;
+  padding: 30px !important;
+  margin: auto !important;
+  margin-top: 50px !important;
+  border-radius: 4px !important;
+  font-family: 'calibri' !important;
+  color: white !important;
+  box-shadow: 7px 13px 37px #000 !important;
+  
+}
+
+
+
 .form-register h4 {
   font-size: 22px;
   margin-bottom: 20px;
@@ -46,7 +61,23 @@ section{
   font-family: 'calibri';
   font-size: 18px;
   color: white;
+
 }
+
+.controls1 {
+  width: 10%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+
+}
+
+
 
 .form-register p {
   height: 40px;

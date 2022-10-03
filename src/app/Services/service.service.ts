@@ -6,12 +6,12 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ServiceService {
-  urlBase = 'https://jsonplaceholder.typicode.com/';
+  urlBase = 'http://localhost/capacitaciones/phpcap_ago22/back/rutas.php?peticion=empleado&funcion=listado';
 
   constructor(private http:HttpClient) { }
 
   lista():Observable<any>{
 
-    return this.http.get(this.urlBase+'todos').pipe(map(respuestaa=>{return respuestaa;}));
+    return this.http.get(this.urlBase).pipe(map(respuestaa=>{return respuestaa;}));
   }
 }

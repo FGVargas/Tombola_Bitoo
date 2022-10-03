@@ -34,7 +34,7 @@ export class TombolaComponent implements OnInit {
       setInterval(this.updateCountdown,100);
 }
   updateCountdown(){
-    const fechainicio = new Date('10/02/2022 11:03 PM');
+    const fechainicio = new Date('10/03/2022 11:03 PM');
     const SPAN_DAYS = document.getElementById('dias');
     const SPAN_HOURS = document.getElementById('horas');
     const SPAN_MINUTES = document.getElementById('minutos');

@@ -7,6 +7,11 @@ import { MenuComponent } from './Components/menu/menu.component';
 import {RouterOutlet} from "@angular/router";
 import { TombolaComponent } from './Components/tombola/tombola.component';
 import {HttpClientModule} from "@angular/common/http";
+<<<<<<< HEAD
+=======
+import { IntercambioComponent } from './Components/intercambio/intercambio.component';
+import { ModalComponent } from './Components/modal/modal.component';
+>>>>>>> fc1a256 (ADD-FILES/intercambio)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -14,7 +19,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HomeComponent,
     MenuComponent,
-    TombolaComponent
+    TombolaComponent,
+    IntercambioComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

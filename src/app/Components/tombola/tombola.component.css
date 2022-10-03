@@ -20,28 +20,39 @@ section{
 }
 .form-register {
   width: 400px !important;
-  background: #24303c !important;
+  background: whitesmoke !important;
   padding: 30px !important;
   margin: auto !important;
   margin-top: 50px !important;
   border-radius: 4px !important;
   font-family: 'calibri' !important;
-  color: white !important;
+  color: black !important;
   box-shadow: 7px 13px 37px #000 !important;
   
 }
 
-.modal-content {
+.modal-header {
+ 
+  background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593) !important;
+  color: white !important;
+
+  
+}
+
+.modal-body {
+
+  background: whitesmoke !important;
+  color: black !important;
+}
+
+.modal-content{
   width: 400px !important;
-  background: #24303c !important;
   padding: 30px !important;
   margin: auto !important;
   margin-top: 50px !important;
   border-radius: 4px !important;
   font-family: 'calibri' !important;
-  color: white !important;
   box-shadow: 7px 13px 37px #000 !important;
-  
 }
 
 .btn-primary {

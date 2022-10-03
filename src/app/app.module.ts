@@ -11,7 +11,11 @@ import {HttpClientModule} from "@angular/common/http";
 =======
 import { IntercambioComponent } from './Components/intercambio/intercambio.component';
 import { ModalComponent } from './Components/modal/modal.component';
+<<<<<<< HEAD
 >>>>>>> fc1a256 (ADD-FILES/intercambio)
+=======
+
+>>>>>>> 550d56e (FILES TOMBOLA)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({

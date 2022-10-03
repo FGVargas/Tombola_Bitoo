@@ -15,17 +15,12 @@ export class IntercambioComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap:any)=>{const {params} = paramMap;
   })
-    this.esferas();
     this.obtener();
   }
 
   obtener(){
     this.servicio.lista().subscribe(result=>{this.listaTodos=result.data.empleado;},
       error=>{console.log(error)});
-  }
-  esferas(){
-
-
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServiceService} from "../../Services/service.service";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  listaEmpleado:Array <any>=[];
+  constructor(private servicio:ServiceService) { }
 
   ngOnInit(): void {
+    this.obtener()
   }
 
+  obtener(){
+    this.servicio.lista().subscribe(result=>{this.listaEmpleado=result.data.empleado;},
+      error=>{console.log(error)});
+  }
 }

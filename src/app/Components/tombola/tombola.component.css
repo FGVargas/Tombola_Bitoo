@@ -44,6 +44,11 @@ section{
   
 }
 
+.btn-primary {
+  width:25% !important;
+  font-size:1.3em !important;
+}
+
 
 
 .form-register h4 {

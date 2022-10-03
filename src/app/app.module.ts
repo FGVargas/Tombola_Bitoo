@@ -7,7 +7,6 @@ import { MenuComponent } from './Components/menu/menu.component';
 import {RouterOutlet} from "@angular/router";
 import { TombolaComponent } from './Components/tombola/tombola.component';
 import {HttpClientModule} from "@angular/common/http";
-import { RegistroComponent } from './Components/registro/registro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -15,8 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     HomeComponent,
     MenuComponent,
-    TombolaComponent,
-    RegistroComponent
+    TombolaComponent
   ],
   imports: [
     BrowserModule,

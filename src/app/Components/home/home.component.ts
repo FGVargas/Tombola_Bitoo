@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
  agregar(){
    this.servicio.createArticulo(this.articulo.value).subscribe(result=>{console.log(result);},
      error=>{console.log(error)});
-   alert("Registro Exitoso");
+   alert("Se creo Articulo Exitoso");
 
    this.home.dismissAll();
  }

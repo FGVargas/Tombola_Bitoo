@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 @Injectable({
   providedIn: 'root'
 })
@@ -11,7 +10,6 @@ export class ServiceService {
   constructor(private http:HttpClient,private _http:HttpClient) { }
 
   listaPersonas():Observable<any>{
-
     return this.http.get(this.urlBase+'/back/rutas.php?peticion=usuario&funcion=listado').pipe(map(respuestaa=>{return respuestaa;}));
   }
   listaArticulos():Observable<any>{
@@ -33,7 +31,6 @@ export class ServiceService {
 
   }
   createArticulo(Articulo:any):Observable<any>{
-
     var request="/back/rutas.php?peticion=articulo&funcion=nuevo";
     var url=this.urlBase+request;
     let datas = new FormData();

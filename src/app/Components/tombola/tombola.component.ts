@@ -34,7 +34,7 @@ export class TombolaComponent implements OnInit {
     this.route.paramMap.subscribe((paramMap:any)=>{const {params} = paramMap;
       this.id = params.id;
     })
-
+this.obtener();
     this.timer();
     this.obtenerUltimo();
     // @ts-ignore

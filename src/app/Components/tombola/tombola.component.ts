@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ServiceService} from "../../Services/service.service";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-tombola',
   templateUrl: './tombola.component.html',
@@ -16,9 +16,18 @@ export class TombolaComponent implements OnInit {
   listaArticulos:Array<any>=[];
   listanueva:Object=[];
    // @ts-ignore
-  participante:FormGroup<any>;
-  constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal,private formBuilder:FormBuilder) {
 
+   createFormGroup(){
+    return new FormGroup({
+      nombre: new FormControl('',[Validators.required]),
+      correo: new FormControl('',[Validators.required]),
+      telefono: new FormControl('',[Validators.required]),
+      cargo:new FormControl('',[Validators.required])
+    });
+  }
+  participanteForm:FormGroup;
+  constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal,private formBuilder:FormBuilder) {
+    this.participanteForm= this.createFormGroup();
   }
 
   ngOnInit(): void {
@@ -48,12 +57,17 @@ this.obtener();
   }
 
   nuevo(){
-    this.servicio.createsuario(this.participante.value).subscribe(result=>{console.log(result);},
+    if(this.participanteForm.valid){
+      this.servicio.createsuario(this.participanteForm.value).subscribe(result=>{console.log(result);},
       error=>{console.log(error)});
-    this.tombola.dismissAll();
-    alert("Registro Exitoso");
-    this.obtenerUltimo();
+      this.obtenerUltimo();
+      this.tombola.dismissAll();
+      alert("Registro Exitoso");
+    }else{
+      alert("Campos Vacios");
+    }
   }
+
   timer(){
 // Refresh every second
       setInterval(this.updateCountdown,100);

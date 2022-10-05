@@ -17,15 +17,19 @@ export class ServiceService {
   listaArticulos():Observable<any>{
     return this.http.get(this.urlBase+'/back/rutas.php?peticion=articulo&funcion=listado').pipe(map(respuestaa=>{return respuestaa;}));
   }
-  createsuario(nuevoUsuario:any):Observable<any>{
+  ultimo():Observable<any>{
+    return this.http.get(this.urlBase+'/back/rutas.php?peticion=usuario&funcion=conteo').pipe(map(respuesta2=>{return respuesta2;}));
+  }
+  createsuario(usuario:any):Observable<any>{
+
     var request="/back/rutas.php?peticion=usuario&funcion=nuevo";
     var url=this.urlBase+request;
-    let body = JSON.stringify({nuevoUsuario});
-    var header=new HttpHeaders().set("content-type","application/json");
-   return this._http.post(url,body)
-  }
-  guardar( usuario:any):Observable<any> {
-    const body = JSON.stringify({usuario});
-    return this.http.post(this.urlBase + '/back/rutas.php?peticion=usuario&funcion=nuevo',body).pipe(map(respuestaa=>{return respuestaa;}));
+    let datas = new FormData();
+    datas.append('nombre',usuario.nombre);
+    datas.append('correo',usuario.correo);
+    datas.append('telefono',usuario.telefono);
+    datas.append('cargo',usuario.cargo);
+    return this._http.post(url,datas).pipe(map(respuestaa=>{return respuestaa;}));
+
   }
 }

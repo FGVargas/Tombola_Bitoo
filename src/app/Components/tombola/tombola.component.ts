@@ -11,6 +11,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class TombolaComponent implements OnInit {
   id:any;
+  totalUsuario:any;
   listaTodos:Array<any>=[];
   listaArticulos:Array<any>=[];
   listanueva:Object=[];
@@ -26,6 +27,7 @@ export class TombolaComponent implements OnInit {
     })
 
     this.timer();
+    this.obtenerUltimo();
     // @ts-ignore
     this.participante=this.formBuilder.group(
       {'nombre':'','correo':'','telefono':'','cargo':''}
@@ -40,10 +42,15 @@ export class TombolaComponent implements OnInit {
     this.servicio.listaArticulos().subscribe(result=>{this.listaArticulos=result.data.articulo;},
       error=>{console.log(error)});
   }
+  obtenerUltimo(){
+    this.servicio.ultimo().subscribe(result=>{this.totalUsuario=result.data;},
+      error=>{console.log(error)});
+  }
 
   nuevo(){
     this.servicio.createsuario(this.participante.value).subscribe(result=>{console.log(result);},
       error=>{console.log(error)});
+    this.tombola.dismissAll();
   }
   timer(){
 // Refresh every second

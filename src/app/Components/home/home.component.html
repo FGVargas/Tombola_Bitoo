@@ -1,28 +1,51 @@
-<section ><br><br>
-  <div class="col-md-5  center">
-    <form>
-    <div class="mb-3 text-center">
-      <table class="table bg-white">
-        <thead class="bg-success">
-        <tr>
-          <th scope="col">#id</th>
-          <th scope="col">Nombre</th>
-          <th scope="col">correo</th>
-          <th scope="col">Empresa</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let persona of listaEmpleado">
-          <th scope="row">{{persona.idusuario}}</th>
-          <td>{{persona.nombre}}</td>
-          <td>{{persona.correo}}</td>
-          <td>{{persona.cargo}}</td>
-        </tr>
-        </tbody>
-      </table>
+<section >
+  <div class="container">
+    <div class="col-lg-6  p-0 m-0 left">
+      <a  class="btn btn-danger fa fa-street-view" (click)="openSM(agregarArticulos)">Agregar premios</a>
     </div>
-  </form>
-
+    <br><br>
+    <div class="col-md-5 rigth">
+      <form>
+        <div class="mb-3 text-center">
+          <table class="table bg-white">
+            <thead class="bg-success">
+            <tr>
+              <th scope="col">#id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">correo</th>
+              <th scope="col">Empresa</th>
+            </tr>
+            </thead>
+          <tbody>
+            <tr *ngFor="let persona of listaEmpleado">
+              <th scope="row">{{persona.idusuario}}</th>
+              <td>{{persona.nombre}}</td>
+              <td>{{persona.correo}}</td>
+              <td>{{persona.cargo}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
   </div>
-
 </section>
+
+<ng-template #agregarArticulos let-modal class="form-register">
+  <div class="modal-header">
+      <h4 class="modal-title">Registro Tombola</h4>
+      <button class="controls1" aria-label="close" type="button" (click)="modal.dismiss()">
+          <span aria-hidden="true" class="text-white">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3 text-center">
+      <input class="controls" formControlName="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre Articulo">
+      <input class="controls" formControlName="correo" type="number" name="correo" id="correo" placeholder="Cantidad">
+      <input class="controls" formControlName="image" type="file" name="image" id="image" placeholder="Seleccionar Imagen">
+        <button class=" btn btn-success" >Registrar</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

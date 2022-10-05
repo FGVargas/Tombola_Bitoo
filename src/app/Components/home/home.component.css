@@ -10,3 +10,125 @@ section{
   background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593);
 }
 
+.form-register {
+  width: 400px !important;
+  background: whitesmoke !important;
+  padding: 30px !important;
+  margin: auto !important;
+  margin-top: 50px !important;
+  border-radius: 4px !important;
+  font-family: 'calibri' !important;
+  color: black !important;
+  box-shadow: 7px 13px 37px #000 !important;
+
+}
+
+.modal-header {
+
+  background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593) !important;
+  color: white !important;
+
+
+}
+
+.modal-body {
+
+  background: whitesmoke !important;
+  color: black !important;
+}
+
+
+
+
+.modal-header{
+  background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593) !important;
+  color: white !important;
+}
+.modal-body {
+  background: whitesmoke !important;
+  color: black !important;
+}
+.modal-content{
+  width: 400px !important;
+  padding: 30px !important;
+  margin: auto !important;
+  margin-top: 50px !important;
+  border-radius: 4px !important;
+  font-family: 'calibri' !important;
+  box-shadow: 7px 13px 37px #000 !important;
+}
+.btn-primary {
+  width:25% !important;
+  font-size:1.3em !important;
+}
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.controls {
+  width: 100%;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-family: 'calibri';
+  font-size: 18px;
+
+}
+.controls1 {
+  width: 10%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-family: 'calibri';
+  font-size: 18px;
+
+}
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  margin: 16px 0;
+  font-size: 16px;
+}
+ng-template{
+  width: 400px !important;
+  background: #24303c !important;
+  padding: 30px !important;
+  margin: auto !important;
+  margin-top: 50px !important;
+  border-radius: 4px !important;
+  font-family: 'calibri' !important;
+  box-shadow: 7px 13px 37px #000 !important;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+

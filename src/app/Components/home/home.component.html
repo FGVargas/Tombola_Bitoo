@@ -41,7 +41,7 @@
       </button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="articulo" (submit)="agregar()" >
+    <form [formGroup]="articuloForm" (submit)="agregar()" >
       <input class="controls" formControlName="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre Articulo" required>
       <input class="controls" formControlName="cantidad" type="number" name="cantidad" id="cantidad" placeholder="Cantidad" required>
         <button class=" btn btn-success" >Registrar</button>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {ServiceService} from "../../Services/service.service";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-home',
@@ -12,8 +12,17 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class HomeComponent implements OnInit {
   listaEmpleado:Array <any>=[];
   // @ts-ignore
-  articulo:FormGroup<any>;
-  constructor(private servicio:ServiceService, private home:NgbModal,private formBuilder:FormBuilder) { }
+  createFormGroup(){
+    return new FormGroup({
+      nombre: new FormControl('',[Validators.required]),
+      cantidad: new FormGroup('',[Validators.required])
+    });
+  }
+
+   articuloForm: FormGroup;
+  constructor(private servicio:ServiceService, private home:NgbModal,private formBuilder:FormBuilder) { 
+    this.articuloForm = this.createFormGroup();
+  }
 
   ngOnInit(): void {
     this.obtener();
@@ -28,11 +37,14 @@ export class HomeComponent implements OnInit {
       error=>{console.log(error)});
   }
  agregar(){
-   this.servicio.createArticulo(this.articulo.value).subscribe(result=>{console.log(result);},
-     error=>{console.log(error)});
-   alert("Se creo Articulo Exitoso");
-
-   this.home.dismissAll();
+  if(this.articuloForm.valid){
+    this.servicio.createArticulo(this.articuloForm.value).subscribe(result=>{console.log(result);},
+      error=>{console.log(error)});
+    alert("Se creo Articulo Exitoso");
+ 
+    this.home.dismissAll();
+   }
+   alert("Campos Vacios");
  }
   openSM(agregarArticulos: any){
     this.home.open(agregarArticulos,{size:'sm'});

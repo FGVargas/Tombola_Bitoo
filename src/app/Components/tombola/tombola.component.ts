@@ -25,9 +25,9 @@ export class TombolaComponent implements OnInit {
       cargo:new FormControl('',[Validators.required])
     });
   }
-  participante:FormGroup;
+  participanteForm:FormGroup;
   constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal,private formBuilder:FormBuilder) {
-    this.participante= this.createFormGroup();
+    this.participanteForm= this.createFormGroup();
   }
 
   ngOnInit(): void {
@@ -57,14 +57,17 @@ export class TombolaComponent implements OnInit {
   }
 
   nuevo(){
-    if(this.participante.valid){
-      this.servicio.createsuario(this.participante.value).subscribe(result=>{console.log(result);},
+    if(this.participanteForm.valid){
+      this.servicio.createsuario(this.participanteForm.value).subscribe(result=>{console.log(result);},
       error=>{console.log(error)});
+      this.obtenerUltimo();
       this.tombola.dismissAll();
       alert("Registro Exitoso");
-      this.obtenerUltimo();
-    }alert("Campos Vacios");
+    }else{
+      alert("Campos Vacios");
+    }
   }
+
   timer(){
 // Refresh every second
       setInterval(this.updateCountdown,100);

@@ -30,7 +30,7 @@
         </button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="participante" (submit)="nuevo()">
+      <form [formGroup]="participanteForm" (submit)="nuevo()">
         <div class="mb-3 text-center">
         <input class="controls" formControlName="nombre" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
         <input class="controls" formControlName="correo" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">

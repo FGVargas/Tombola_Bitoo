@@ -17,9 +17,5 @@ export class IntercambioComponent implements OnInit {
   })
   }
 
-  obtener(){
-    this.servicio.listaPersonas().subscribe(result=>{this.listaTodos=result.data.empleado;},
-      error=>{console.log(error)});
-  }
 
 }

@@ -28,7 +28,7 @@ export class TombolaComponent implements OnInit {
     this.timer();
     // @ts-ignore
     this.participante=this.formBuilder.group(
-      {'nombre':[''],'correo':[''],'telefono':[''],'cargo':['']}
+      {'nombre':'','correo':'','telefono':'','cargo':''}
     );
   }
 
@@ -42,7 +42,7 @@ export class TombolaComponent implements OnInit {
   }
 
   nuevo(){
-    this.servicio.guardar(this.participante.value).subscribe(result=>{this.listanueva=result;},
+    this.servicio.createsuario(this.participante.value).subscribe(result=>{console.log(result);},
       error=>{console.log(error)});
   }
   timer(){

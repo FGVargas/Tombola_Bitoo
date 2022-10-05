@@ -43,7 +43,7 @@ export class TombolaComponent implements OnInit {
       error=>{console.log(error)});
   }
   obtenerUltimo(){
-    this.servicio.ultimo().subscribe(result=>{this.totalUsuario=result.data;},
+    this.servicio.ultimo().subscribe(result=>{this.totalUsuario=result.data.usuario;},
       error=>{console.log(error)});
   }
 
@@ -51,6 +51,8 @@ export class TombolaComponent implements OnInit {
     this.servicio.createsuario(this.participante.value).subscribe(result=>{console.log(result);},
       error=>{console.log(error)});
     this.tombola.dismissAll();
+    alert("Registro Exitoso");
+    this.obtenerUltimo();
   }
   timer(){
 // Refresh every second

@@ -32,4 +32,15 @@ export class ServiceService {
     return this._http.post(url,datas).pipe(map(respuestaa=>{return respuestaa;}));
 
   }
+  createArticulo(Articulo:any):Observable<any>{
+
+    var request="/back/rutas.php?peticion=articulo&funcion=nuevo";
+    var url=this.urlBase+request;
+    let datas = new FormData();
+    datas.append('nombre',Articulo.nombre);
+    datas.append('cantidad',Articulo.cantidad);
+    datas.append('probabilidad',Articulo.probabilidad);
+    return this._http.post(url,datas).pipe(map(respuestaa=>{return respuestaa;}));
+
+  }
 }

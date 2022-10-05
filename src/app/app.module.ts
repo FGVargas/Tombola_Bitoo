@@ -7,16 +7,12 @@ import { MenuComponent } from './Components/menu/menu.component';
 import {RouterOutlet} from "@angular/router";
 import { TombolaComponent } from './Components/tombola/tombola.component';
 import {HttpClientModule} from "@angular/common/http";
-<<<<<<< HEAD
-=======
+
 import { IntercambioComponent } from './Components/intercambio/intercambio.component';
 import { ModalComponent } from './Components/modal/modal.component';
-<<<<<<< HEAD
->>>>>>> fc1a256 (ADD-FILES/intercambio)
-=======
 
->>>>>>> 550d56e (FILES TOMBOLA)
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +28,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RouterOutlet,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

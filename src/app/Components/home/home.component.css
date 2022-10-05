@@ -4,3 +4,9 @@ section{
   background:url("../img/intercambio.png")no-repeat;
   background-size: 100%;
 }
+.center{
+}
+.bitoo{
+  background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593);
+}
+

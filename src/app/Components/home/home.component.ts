@@ -11,11 +11,11 @@ export class HomeComponent implements OnInit {
   constructor(private servicio:ServiceService) { }
 
   ngOnInit(): void {
-    this.obtener()
+    this.obtener();
   }
 
   obtener(){
-    this.servicio.lista().subscribe(result=>{this.listaEmpleado=result.data.empleado;},
+    this.servicio.listaPersonas().subscribe(result=>{this.listaEmpleado=result.data.usuario;},
       error=>{console.log(error)});
   }
 }

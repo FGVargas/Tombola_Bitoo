@@ -28,16 +28,15 @@ section{
   font-family: 'calibri' !important;
   color: black !important;
   box-shadow: 7px 13px 37px #000 !important;
-<<<<<<< HEAD
-  
+
 }
 
 .modal-header {
- 
+
   background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593) !important;
   color: white !important;
 
-  
+
 }
 
 .modal-body {
@@ -46,9 +45,8 @@ section{
   color: black !important;
 }
 
-=======
 
-}
+
 
 .modal-header{
   background: -webkit-linear-gradient(180deg, #A94EEC 15px, #E95593) !important;
@@ -58,7 +56,6 @@ section{
   background: whitesmoke !important;
   color: black !important;
 }
->>>>>>> 550d56e (FILES TOMBOLA)
 .modal-content{
   width: 400px !important;
   padding: 30px !important;
@@ -68,25 +65,14 @@ section{
   font-family: 'calibri' !important;
   box-shadow: 7px 13px 37px #000 !important;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 550d56e (FILES TOMBOLA)
 .btn-primary {
   width:25% !important;
   font-size:1.3em !important;
 }
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 550d56e (FILES TOMBOLA)
 .form-register h4 {
   font-size: 22px;
   margin-bottom: 20px;
 }
-<<<<<<< HEAD
 
 .controls {
   width: 100%;
@@ -94,18 +80,15 @@ section{
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
-  border: 1px solid #1f53c5;
-=======
+}
 .controls {
   width: 100%;
   background: #ffffff;
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
->>>>>>> 550d56e (FILES TOMBOLA)
   font-family: 'calibri';
   font-size: 18px;
-  color: white;
 
 }
 .controls1 {
@@ -114,18 +97,10 @@ section{
   padding: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
-  border: 1px solid #1f53c5;
   font-family: 'calibri';
   font-size: 18px;
-  color: white;
 
 }
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 550d56e (FILES TOMBOLA)
 .form-register p {
   height: 40px;
   text-align: center;
@@ -134,12 +109,10 @@ section{
 }
 
 .form-register a {
-  color: white;
   text-decoration: none;
 }
 
 .form-register a:hover {
-  color: white;
   text-decoration: underline;
 }
 
@@ -148,12 +121,9 @@ section{
   background: #1f53c5;
   border: none;
   padding: 12px;
-  color: white;
   margin: 16px 0;
   font-size: 16px;
 }
-<<<<<<< HEAD
-
 ng-template{
   width: 400px !important;
   background: #24303c !important;
@@ -162,8 +132,5 @@ ng-template{
   margin-top: 50px !important;
   border-radius: 4px !important;
   font-family: 'calibri' !important;
-  color: white !important;
   box-shadow: 7px 13px 37px #000 !important;
 }
-=======
->>>>>>> 550d56e (FILES TOMBOLA)

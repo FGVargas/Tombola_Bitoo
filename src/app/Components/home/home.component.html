@@ -1,6 +1,28 @@
-<section>
-  <table class="col-lg-6  p-0 m-0"  >
-    <tr class="esfera  col-lg-1" *ngFor="let persona of listaEmpleado" >
-      <td>{{persona.id_empleado}}</td></tr>
-  </table>
+<section ><br><br>
+  <div class="col-md-5  center">
+    <form>
+    <div class="mb-3 text-center">
+      <table class="table bg-white">
+        <thead class="bg-success">
+        <tr>
+          <th scope="col">#id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">correo</th>
+          <th scope="col">Empresa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let persona of listaEmpleado">
+          <th scope="row">{{persona.idusuario}}</th>
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.correo}}</td>
+          <td>{{persona.cargo}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+
+  </div>
+
 </section>

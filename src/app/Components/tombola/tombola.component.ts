@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {ServiceService} from "../../Services/service.service";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-tombola',
   templateUrl: './tombola.component.html',
@@ -12,21 +12,37 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 export class TombolaComponent implements OnInit {
   id:any;
   listaTodos:Array<any>=[];
-  temporizador:number=0;
-  constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal) {
+  listaArticulos:Array<any>=[];
+  listanueva:Object=[];
+   // @ts-ignore
+  participante:FormGroup<any>;
+  constructor(private route:ActivatedRoute,private servicio:ServiceService, private tombola:NgbModal,private formBuilder:FormBuilder) {
+
   }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap:any)=>{const {params} = paramMap;
       this.id = params.id;
     })
-    this.obtener();
 
     this.timer();
+    // @ts-ignore
+    this.participante=this.formBuilder.group(
+      {'nombre':[''],'correo':[''],'telefono':[''],'cargo':['']}
+    );
   }
 
   obtener(){
-    this.servicio.lista().subscribe(result=>{this.listaTodos=result;},
+    this.servicio.listaPersonas().subscribe(result=>{this.listaTodos=result;},
+      error=>{console.log(error)});
+  }
+  obtenerArticulos(){
+    this.servicio.listaArticulos().subscribe(result=>{this.listaArticulos=result.data.articulo;},
+      error=>{console.log(error)});
+  }
+
+  nuevo(){
+    this.servicio.guardar(this.participante.value).subscribe(result=>{this.listanueva=result;},
       error=>{console.log(error)});
   }
   timer(){
@@ -34,7 +50,7 @@ export class TombolaComponent implements OnInit {
       setInterval(this.updateCountdown,100);
 }
   updateCountdown(){
-    const fechainicio = new Date('10/03/2022 11:03 PM');
+    const fechainicio = new Date('10/06/2022 11:03 PM');
     const SPAN_DAYS = document.getElementById('dias');
     const SPAN_HOURS = document.getElementById('horas');
     const SPAN_MINUTES = document.getElementById('minutos');
@@ -52,13 +68,13 @@ export class TombolaComponent implements OnInit {
     const segundos = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
 
     // @ts-ignore
-    SPAN_DAYS.textContent = String(dias);
+    SPAN_DAYS.innerText = String(dias);
     // @ts-ignore
-    SPAN_HOURS.textContent = String(horas);
+    SPAN_HOURS.innerText = String(horas);
     // @ts-ignore
-    SPAN_MINUTES.textContent =  minutos;
+    SPAN_MINUTES.innerText =  minutos;
     // @ts-ignore
-    SPAN_SECONDS.textContent = segundos;
+    SPAN_SECONDS.innerText = segundos;
   }
   openSM(contenido: any){
     this.tombola.open(contenido,{size:'sm'});
